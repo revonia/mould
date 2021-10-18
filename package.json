@@ -1,0 +1,47 @@
+{
+  "name": "mould",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/revonia/mould",
+  "author": "revonia <revonia64@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@codingame/monaco-jsonrpc": "^0.3.1",
+    "@codingame/monaco-languageclient": "^0.14.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.11.1",
+    "@types/ws": "^8.2.0",
+    "css-loader": "^5",
+    "express": "^4.15.2",
+    "file-loader": "^4.3.0",
+    "monaco-editor-core": "^0.29.0",
+    "normalize-url": "^7.0.2",
+    "reconnecting-websocket": "^3.2.2",
+    "request-light": "^0.2.2",
+    "source-map-loader": "^1.0.0",
+    "style-loader": "^2",
+    "ts-node": "^10.3.0",
+    "typescript": "^4.4.4",
+    "vls": "^0.7.6",
+    "vscode-json-languageservice": "^4.0.2",
+    "vscode-languageserver": "7.0.0",
+    "vscode-uri": "^3.0.2",
+    "webpack": "^4",
+    "webpack-merge": "^4",
+    "ws": "^5.0.0",
+    "yaml-language-server": "^1.0.0"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf lib",
+    "copy": "cp src/index.html lib/index.html",
+    "build": "yarn run compile && webpack && yarn run copy",
+    "start": "node lib/server.js",
+    "start:ext": "node lib/server.js --external"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.1"
+  }
+}
